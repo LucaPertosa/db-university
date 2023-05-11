@@ -1,0 +1,68 @@
+________________
+dipartimenti
+________________
+
+id - INT - UNSIGNED - PRIMARY_KEY(UNIQUE-NOT NULL) AUTO_INCREMENT;
+name - VARCHAR(50) - NOT NULL;
+address - VARCHAR(50) - NOT NULL;
+
+________________
+corso_laurea
+________________
+
+id - INT - UNSIGNED - PRIMARY_KEY(UNIQUE-NOT NULL) AUTO_INCREMENT;
+id_dipartimento - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+name - VARCHAR(50) - NOT NULL;
+
+________________
+corsi
+________________
+
+id - INT - UNSIGNED - PRIMARY_KEY(UNIQUE-NOT NULL) AUTO_INCREMENT;
+id_corso_laurea - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+name - VARCHAR(50) - NOT NULL;
+
+________________
+insegnanti
+________________
+
+id - INT - UNSIGNED - PRIMARY_KEY(UNIQUE-NOT NULL) AUTO_INCREMENT;
+name - VARCHAR(50) - NOT NULL;
+lastname - VARCHAR(50) - NOT NULL;
+
+________________
+corsi_insegnanti
+________________
+
+id_corso - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+id_insegnante - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+
+________________
+appelli
+________________
+
+id - INT - UNSIGNED - PRIMARY_KEY(UNIQUE-NOT NULL) AUTO_INCREMENT;
+id_corso - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+data - data - NOT NULL;
+
+________________
+studenti
+________________
+
+id - INT - UNSIGNED - PRIMARY_KEY(UNIQUE-NOT NULL) AUTO_INCREMENT;
+id_corso_laurea - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+name - VARCHAR(50) - NOT NULL;
+lastname - VARCHAR(50) - NOT NULL;
+birth_date - data - NOT NULL;
+
+________________
+studenti_appelli
+________________
+
+id_studenti - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+id_appello - INT - UNSIGNED - FOREIGN_KEY(UNIQUE-NOT NULL);
+vote - INT - UNSIGNED - NOT NULL;
+
+________________
+
+
